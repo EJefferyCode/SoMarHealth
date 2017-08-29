@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <script src="https://use.fontawesome.com/e0e83f42cb.js"></script>
+    
+    <link rel="stylesheet" href="bootstrap-social.css">
+    
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+
+    <title>SoMar Health Insurance</title>
+  </head>
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid" id="cont">
+      <div class="navbar-header">
+       <a class="navbar-brand" href="#"><k>SoMar HealthCo</k></a>
+      </div>
+      <ul class="nav navbar-nav">
+      <li><a href="index.html"><k>Home</k></a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><k>MySomar <span class="caret"></span></k></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+Signup </a></li>
+        </ul>
+      </li>
+          <li><a href="#"><k>Make A Claim</k></a></li>
+      <li><a href="#"><k>Contact Us</k></a></li>
+      <li><a href="#"><k>Careers</k></a></li>
+      <li class="active"><a href="quiz.html"><k>Eligibility Quiz</k></a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="col-sm-12">
+      <h1 id="h1" style="margin-left:24%;">Find Out If You Are Eligible For Coverage By Answering A Few Questions Below!</h1>
+    </div>  
+    <!--CAROUSEL QUESTIONNAIRE-->
+      <div class="col-sm-4 text-center" id="box">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+          <!--Slide wrapper-->
+            <div class="carousel-inner">
+              <!--images and forms-->
+                <div class="item active">
+                <img src="images/cartoon.jpg" style="height:100px;width:100px;margin-left:55%;">
+                <legend style="margin-right:3%; margin-left:32%;width:300px"><span class="number">1.</span> First, What Is Your Age Range?</legend>
+                    <form>
+                        <div class="form-group" style="margin-left:30%;">
+                            <label for="sell">Select One:</label>
+                            <select class="form-control" id="sell" onchange="elConfirm(this)">
+                                <option value="null">---</option>
+                                <option value="ua">Under 18</option>
+                                <option value="ok">18-25</option>
+                                <option value="ok">26-34</option>
+                                <option value="oa">35 and over</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                
+                
+                <div class="item">
+                <img src="images/city.jpg" style="height:100px;width:100px;margin-left:33.5%;">
+                    <legend><span class="number">2.</span> Where are you currently located?</legend>
+                    <form>
+                        <div class="radio" style="width:30%;">
+                           <label><input type="radio" name="optradio" value="us">United States</label><br>
+                        </div>
+                         <div class="radio" style="width:20%;margin-left:3px;">
+                           <label><input type="radio" name="optradio" value="ca">Canada</label><br>
+                        </div>
+                         <div class="radio" style="width:40%;margin-left:-2px;">
+                           <label><input type="radio" name="optradio" value="oc" onclick="clickFun()">Some other country</label><br>
+                        </div>
+                    </form>
+                </div>
+                
+               
+                <div class="item">
+                <img src="images/income.jpg" style="height:100px;width:100px;margin-left:35%;">
+                    <legend><span class="number">3.</span> Your annual income falls between:</legend>
+                    <form>
+                        <div class="form-group">
+                            <label for="sell">Select One:</label>
+                            <select class="form-control" id="sell" onchange="ilConfirm(this)">
+                                <option value="null">---</option>
+                                <option value="20">$20,000-$25,999</option>
+                                <option value="26">$26,000-$35,999</option>
+                                <option value="36">$36,000-$45,999</option>
+                                <option value="45">Over $45,999</option>
+                                <option value="neg20">Under $20,000</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                
+              
+                <div class="item">
+                <img src="images/roomie.jpg" style="height:100px;width:100px;margin-left:33.6%;">
+                    <legend><span class="number">4.</span> Now, what is your living situation?</legend>
+                    <form>
+                        <div class="form-group">
+                            <label for="sell">Select One:</label>
+                            <select class="form-control" id="sell" onchange="bConfirm(this)">
+                                <option>---</option>
+                                <option value="rent">Rent (living alone)</option>
+                                <option value="own">Own (living alone)</option>
+                                <option value="rento">Rent (living with others)</option>
+                                <option value="owno">Own (living with others)</option>
+                                <option value="oth">Some other arrangement</option>
+                                <option value="less">I am currently homeless</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                
+                
+                <div class="item">
+                <img src="images/diet.jpg" style="height:100px;width:100px;margin-left:33.5%;">
+                    <legend><span class="number">5.</span> Your diet could best be described as:</legend>
+                    <form>
+                        <div class="radio" style="width:30%;">
+                           <label><input type="radio" name="optradio">Excellent</label><br>
+                        </div>
+                         <div class="radio" style="width:25%;margin-left:14px;">
+                           <label><input type="radio" name="optradio">Very Good</label><br>
+                        </div>
+                         <div class="radio" style="width:20%;margin-left:8.5px;">
+                           <label><input type="radio" name="optradio">Good</label><br>
+                        </div>
+                        <div class="radio" style="width:20%;margin-left:3px;">
+                           <label><input type="radio" name="optradio">Fair</label><br>
+                        </div>
+                        <div class="radio" style="width:20%;margin-left:5px;">
+                           <label><input type="radio" name="optradio" onclick="hConfirm()">Poor</label><br>
+                        </div>
+                    </form>
+                </div>
+                
+                
+                <div class="item">
+                <img src="images/pre.jpg" style="height:100px;width:100px;margin-left:33%;">
+                    <legend><span class="number">6.</span> Have you ever been diagnosed with any of the following conditions?</legend>
+                    <form>
+                        <div class="checkbox" style="width:60%">
+                            <label><input type="checkbox" value="">Depression/Anxiety/PTSD</label>
+                        </div>
+                        <div class="checkbox" style="width:32%;">
+                            <label><input type="checkbox" value="">Cancer</label>
+                        </div>
+                        <div class="checkbox" style="width:35%;">
+                            <label><input type="checkbox" value="">HIV/AIDS</label>
+                        </div>
+                        <div class="checkbox" style="width:45%;">
+                            <label><input type="checkbox" value="">Type 2 Diabetes</label>
+                        </div>
+                        <div class="checkbox" style="width:33%;">
+                            <label><input type="checkbox" value="" onclick="pConfirm()">Allergies</label>
+                        </div>
+                        <div class="checkbox" style="width:51%;">
+                            <label><input type="checkbox" value="">Rheumatoid Arthritis</label>
+                        </div>
+                        <div class="checkbox" style="width:47%;">
+                            <label><input type="checkbox" value="" onclick="pConfirm()">Multiple Sclerosis</label>
+                        </div>
+                        <div class="checkbox" style="width:33.5%;">
+                            <label><input type="checkbox" value="" onclick="pConfirm()">Hepatitis</label>
+                        </div>
+                        <div class="checkbox" style="width:62%;">
+                            <label><input type="checkbox" value="">HPV (Human Papillomavirus)</label>
+                        </div>
+                        <div class="checkbox" style="width:51%;">
+                            <label><input type="checkbox" value="" onclick="pConfirm()">Huntington's Disease</label>
+                        </div>
+                    </form>
+                </div>
+                
+                
+                <div class="item" style="width:90%;cursor:default;">
+                <h3 style="width:100%;">PLEASE READ THE FOLLOWING IN ITS ENTIRETY</h3>
+                <hr>
+                 <div class="container" style="width:70%;line-height:2;">
+                <p>
+                   The data provided in this questionnaire are used for eligibility purposes only
+                   and are in no way tied to or used to identify the persons answering said questions. 
+                   By submitting this form, you consent to Somar HealthCo using your information for statistical
+                   purposes only, and agree to be contacted (if you provide information) by one of our healthcare
+                   representatives for followup purposes. Submitting contact information is <b>NOT</b> required, and will <b>NOT</b> be tied 
+                   to your answers by any means. 
+                </p>
+                </div>
+                    <form id="form">
+                    <input type="checkbox" required id="check"> <b>Click here if you agree with the above statment.</b>
+                    <button type="submit" class="btn btn-info" id="button">Submit</button>
+                    </form>
+                </div>
+                
+               
+            </div>
+            <!--right control only. no going back-->
+            <a class="right carousel-control" id="car" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+          </div>
+      </div>
+      <!--end of survey form ::approved::-->
+      <div class="col-sm-4 text-center" id="cong">
+          <h2>Great News!</h2>  
+          <p>You've Made It To The End Of Quiz!<br>Which Means You're Eligible For Coverage!</p>
+          <img src="images/sun.jpg" style="width:200px;"/>
+            <div class="row" id="row">
+              <h3>Enter Your Contact Information For A Follow-Up With One Of Our Representatives</h3>
+                <!--Modal Trigger Button-->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mainMod">Click Here</button>
+            </div>
+      </div>
+      
+      <!--Modal-->
+      <div id="mainMod" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4>SoMar HealthCo</h4>
+              <img src="images/contact.jpg" style="width:300px;"/>
+                <figcaption><i>Someone will contact you within 24-48 hours</i></figcaption>
+            </div>
+             <div class="modal-body">
+               <div class="form-group">
+                 <label for="usr">Full Name<span class="span">*</span></label>
+                 <input type="text" class="form-control" id="usr">
+               </div>
+               <div class="form-group">
+                 <label for="ema">Email<span class="span">*</span></label>
+                 <input type="email" class="form-control" id="ema">
+               </div>
+               <div class="form-group">
+                 <label for="phone">Phone<span class="span">*</span></label>
+                 <input type="text" class="form-control" id="pho">
+              </div>
+              <div class="form-group">
+                 <label for="add">Mailing Address</label>
+                 <input type="text" class="form-control" id="add">
+              </div>
+             </div>
+            <div class="modal-footer">
+              <input type="checkbox" id="offers" checked> <b>I agree to recieving updates via email</b><br><br>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="container-fluid text-center">
+      <p>&copy;SoMar HealthCo 2019</p>
+      <a href="#">Legal</a><br>
+      <a href="#">Partner Sites</a><br>
+      <a href="#">BBB Accredited</a>
+</footer>
+      
+      
+      
+      
+      
+      
+    
+    
+
+  
+   <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+   
+      
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      
+    <script src="js.js"></script>
+ </body>
+</html>
